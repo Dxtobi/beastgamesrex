@@ -1,7 +1,7 @@
 
 
 
-const imgs = 'https://www.zenithbank.com/media/1600/zenith-page-header-2-aspire-2500x1000.jpg?anchor=center&mode=crop&width=2500&height=1000&rnd=132014925800000000'
+const imgs = 'https://i.pinimg.com/originals/fe/b8/29/feb82990ddd50a493528084369af8709.png'
 
 //const inter = Inter({ subsets: ['latin'] })
 
