@@ -47,7 +47,7 @@ export default async function handler(
   // validate if it is a POST
   if (req.method !== "POST") {
     return res
-      .status(200)
+      .status(401)
       .json({ error: "This API call only accepts POST methods" });
   }
 
@@ -77,7 +77,7 @@ export default async function handler(
    res.status(200).json({ msg: "Successfuly created new User: " + newUser })
    
  } catch (error) {
-  res.status(400).json({ error: "Error on '/api/register': " })
+  res.status(400).json({ error: "Error on '/api/register': " + error })
   
  }
 }

@@ -26,7 +26,7 @@ export default function Landing() {
   return (
       <div className='w-full m-auto'>
           <div className=" mb-4 relative">
-              <img src="hero.webp" alt='jj' className="w-full  object-contain " />
+              <img src="hero.webp" alt='' className="w-full  object-contain " />
               <div className=" absolute left-0 top-0 right-0 bottom-0 flex justify-center items-center">
                 <div className=" text-3xl text-white font-bold text-center">
                     Beast Games Tips Subscriptions
