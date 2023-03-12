@@ -54,10 +54,6 @@ export default async function handler(
   // get and validate body variables
   const { username, email, password } = req.body;
 
-  const errorMessage = await validateForm(username, email, password);
-  if (errorMessage) {
-    return res.status(400).json(errorMessage as ResponseData);
-  }
 
   // hash password
   const hashedPassword = await bcrypt.hash(password, 12);
