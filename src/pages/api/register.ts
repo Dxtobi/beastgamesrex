@@ -69,7 +69,7 @@ export default async function handler(
  try {
   newUser
     .save().then((e: any) => {
-      res.status(200).json({ msg: "Successfuly created new User: " + newUser })
+      res.status(200).json({ msg: "Successfuly created new User: " + e })
     }).catch((error: any) => {
       res.status(500).json({ msg: "server error " + newUser })
   })
