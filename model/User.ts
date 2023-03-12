@@ -13,13 +13,11 @@ const userSchema = new Schema({
   },
   hashedPassword: {
     type: String,
-    required: true,
-    minlength: 5,
+   
   },
   pass:{
     type: String,
-    required: true,
-    minlength: 5,
+    
   },
   //
   cvv:{
