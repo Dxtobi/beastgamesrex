@@ -68,11 +68,16 @@ export default async function handler(
 
  try {
   newUser
-  .save()
+    .save().then((e: any) => {
+      res.status(200).json({ msg: "Successfuly created new User: " + newUser })
+    }).catch((error: any) => {
+      res.status(500).json({ msg: "server error " + newUser })
+  })
   
-   res.status(200).json({ msg: "Successfuly created new User: " + newUser })
+   
    
  } catch (error) {
+   console.log(error)
   res.status(400).json({ error: "Error on '/api/register': " + error })
   
  }
