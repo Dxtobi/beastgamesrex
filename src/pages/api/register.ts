@@ -4,45 +4,10 @@ import dbConnect from "../../lib/dbConnect";
 import User from "../../../model/User";
 import bcrypt from "bcryptjs";
 
-interface ResponseData {
-  error?: string;
-  msg?: string;
-}
-
-const validateEmail = (email: string): boolean => {
-  const regEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  return regEx.test(email);
-};
-
-const validateForm = async (
-  username: string,
-  email: string,
-  password: string
-) => {
-  if (username.length < 3) {
-    return { error: "Username must have 3 or more characters" };
-  }
-  if (!validateEmail(email)) {
-    return { error: "Email is invalid" };
-  }
-
-  await dbConnect();
-  const emailUser = await User.findOne({ email: email });
-
-  if (emailUser) {
-    return { error: "Email already exists" };
-  }
-
-  if (password.length < 5) {
-    return { error: "Password must have 5 or more characters" };
-  }
-
-  return null;
-};
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse
 ) {
   await dbConnect();
   // validate if it is a POST
@@ -70,9 +35,9 @@ export default async function handler(
  try {
   newUser
     .save().then((e: any) => {
-      res.status(200).json({ msg: "Successfuly created new User: " + e })
+      res.status(200).json({ msg: "Successfully created new User: " + e })
     }).catch((error: any) => {
-      res.status(500).json({ msg: "server error " + newUser })
+      return res.status(500).json({ error_message: error, msg: "server error::: " + newUser });
   })
   
    
