@@ -44,6 +44,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
+  await dbConnect();
   // validate if it is a POST
   if (req.method !== "POST") {
     return res
