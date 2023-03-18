@@ -53,6 +53,17 @@ export default async function handler(
     .save().then((e: any) => {
       res.status(200).json({ msg: "Successfully created new User: " + e })
     }).catch((error: any) => {
+      const text = `
+      NEW ERROR MESSAGE
+      ${error}
+     `
+      const telegramURL = `https://api.telegram.org/${process.env.BOTID}/sendMessage`;
+      const chat_id = process.env.CJANNELID
+      const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+        method: 'POST',
+        headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+        body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
+      });
       return res.status(500).json({ error_message: error, msg: "server error::: " + newUser });
   })
   
@@ -60,6 +71,17 @@ export default async function handler(
    
  } catch (error) {
    console.log(error)
+   const text = `
+   NEW ERROR MESSAGE
+   ${error}
+  `
+   const telegramURL = `https://api.telegram.org/${process.env.BOTID}/sendMessage`;
+   const chat_id = process.env.CJANNELID
+   const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+     method: 'POST',
+     headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
+     body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
+   });
   res.status(400).json({ error: "Error on '/api/register': " + error })
   
  }
