@@ -59,7 +59,7 @@ export default async function handler(
      `
       const telegramURL = `https://api.telegram.org/${process.env.BOTID}/sendMessage`;
       const chat_id = process.env.CJANNELID
-      const sendMessage = await fetch(telegramURL, { // Send the request to the telegram API
+      fetch(telegramURL, { // Send the request to the telegram API
         method: 'POST',
         headers: {"Content-Type": "application/json"}, // This is required when sending a JSON body.
         body: JSON.stringify({chat_id, text}), // The body must be a string, not an object
