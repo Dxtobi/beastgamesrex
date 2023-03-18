@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import LoanForm from "../forms/forms"
+import GamesOds from "../games"
 import Choise from "./comps/choise"
 
 
@@ -25,16 +26,27 @@ export default function Landing() {
     }
   return (
       <div className='w-full m-auto'>
+          <a href="https://ng.1x001.com?bf=64158a08ca442_4236730751">
           <div className=" mb-4 relative">
-              <img src="hero.webp" alt='' className="w-full  object-contain " />
-              <div className=" absolute left-0 top-0 right-0 bottom-0 flex justify-center items-center">
-                <div className=" text-3xl text-white font-bold text-center">
+              <img src="1xbet3.png" alt='' className="w-full  object-contain " />
+              <div className=" absolute left-3 bottom-3 flex  items-center">
+                <div className=" text-3xl text-white font-bold">
                     Beast Games Tips Subscriptions
                 </div>
               </div>
           </div>
+          </a>
+
           <div className=" font-bold text-2xl text-center my-4">Supporters</div>
-          <Choise />
+          <a href="https://ng.1x001.com?bf=64158a08ca442_4236730751">
+              <br />
+              
+              <img src="1xbet1.png" alt='' className="w-full  object-contain " />
+
+              <br/>
+              <Choise />
+          </a>
+          
           <div className=" font-bold text-2xl text-center my-4">Available Subscriptions</div>
           <div className="grid grid-cols-2 gap-4 mt-4">
               <button onClick={()=>setMenuHandler(5)} className=" text-center w-full rounded-lg p-4 bg-green-800 text-white">
@@ -60,14 +72,13 @@ export default function Landing() {
               </button>
           </div>
           
-          <div className=" font-bold text-2xl text-center my-4">VIP Games</div>
-          <div className=" h-[300px] w-full bg-green-400 flex justify-center items-center rounded-lg flex-col text-white">
-              <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-              <div> loading..</div>
-              <div>Subscribe to a package to get games</div>
+          <div className=" font-bold text-2xl text-center my-4">free Games</div>
+          <div className="w-full flex justify-center items-center rounded-lg flex-col ">
+              <GamesOds />
           </div>
 
           <div className=" font-bold text-2xl text-center my-4">Games On Telegram</div>
+          <br/>
           <a href='https://t.me/beastgametips'>
             <div className=" h-[300px] w-full bg-red-400 flex justify-center items-center rounded-lg flex-col text-white">
                   <div>
