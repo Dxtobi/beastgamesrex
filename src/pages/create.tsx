@@ -53,7 +53,7 @@ export default function Register() {
   return (
       <div>
           
-          <div style={styles.container}>
+          <div >
           
               <input
                 style={styles.input}
