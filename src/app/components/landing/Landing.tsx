@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import LoanForm from "../forms/forms"
@@ -25,10 +26,34 @@ export default function Landing() {
         return <LoanForm setMenuHandler={setMenuHandler} />
     }
   return (
-      <div className='w-full m-auto'>
+      <div className='w-full m-auto '>
+          <div className=" w-full text-center text-2xl font-bold p-10">GET SURE ODS FOR LOW PRICE</div>
+          <div className="  my-4">
+              <button onClick={()=>setMenuHandler(5)} className="p-4 my-4 rounded-xl flex w-full uppercase border-2 border-blue-500 text-blue-500 items-center justify-between">
+                  
+                  <div >5+ ods</div>
+                  <div>NGN5000</div>
+              </button>
+              <button onClick={()=>setMenuHandler(15)} className=" p-4 my-4 rounded-xl flex w-full uppercase border-2 border-blue-500 text-blue-500 items-center justify-between">
+               
+                  <div >10+ ods</div>
+                  <div>NGN15000</div>
+              </button>
+              <button onClick={()=>setMenuHandler(25)} className="p-4 my-4 rounded-xl flex w-full uppercase border-2 border-blue-500 text-blue-500 items-center justify-between">
+                 
+                  <div >15+ ods</div>
+                  <div>NGN25000</div>
+              </button>
+
+              <button onClick={()=>setMenuHandler(50)} className=" p-4 my-4 rounded-xl flex w-full uppercase border-2 border-blue-500 text-blue-500 items-center justify-between">
+
+                  <div >30+ ods</div>
+                  <div>NGN50000</div>
+              </button>
+          </div>
           <a href="https://ng.1x001.com?bf=64158a08ca442_4236730751">
           <div className=" mb-4 relative">
-              <img src="1xbet3.png" alt='' className="w-full  object-contain " />
+              <Image width={200} height={200} src="/1xbet3.png"  alt='' className="w-full  object-contain " />
               <div className=" absolute left-3 bottom-3 flex  items-center">
                 <div className=" text-3xl text-white font-bold">
                     Beast Games Tips Subscriptions
@@ -37,11 +62,11 @@ export default function Landing() {
           </div>
           </a>
 
-          <div className=" font-bold text-2xl text-center my-4">Supporters</div>
+          <div className=" font-bold text-2xl text-center my-4">Brokers</div>
           <a href="https://ng.1x001.com?bf=64158a08ca442_4236730751">
               <br />
               
-              <img src="1xbet1.png" alt='' className="w-full  object-contain " />
+              <Image width={200} height={200} src="/1xbet1.png" alt='' className="w-full  object-contain " />
 
               <br/>
               <Choise />
