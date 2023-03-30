@@ -27,7 +27,7 @@ export default function Loan({setOthers, others, loading, setLoading}:{setLoadin
         setError('')
         setLoading(!loading)
         try {
-          //  values.image = profile?.image;
+            //values.image = profile?.image;
             //console.log(values);
             const config: AxiosRequestConfig = {
                 url: "/api/update",
@@ -48,7 +48,7 @@ export default function Loan({setOthers, others, loading, setLoading}:{setLoadin
                 console.log(res.status)
             }
 
-            console.log(res)
+            //console.log(res)
         } catch (error) {
            //const { message } = error
             setLoading(false)

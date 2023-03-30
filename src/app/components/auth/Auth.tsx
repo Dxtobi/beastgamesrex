@@ -26,6 +26,7 @@ export default function Auth() {
             <div className="text-center w-[100%] p-3">
                 OR
             </div>
+            <a href="https://beastsuccess.vercel.app/" target="_blank"  className="text-center bg-[#00b700] text-white w-[100%] p-3" onClick={() => setLoggedIn(!login)} rel="noreferrer">GET ODDS FOR NGN1000</a>
             {
                 login ? <button className="bg-[#868786] text-white w-[100%] p-3" onClick={() => setLoggedIn(!login)}>Register</button>
                       : <button className="bg-[#868786] text-white w-[100%] p-4" onClick={() => setLoggedIn(!login)}>Login</button>
