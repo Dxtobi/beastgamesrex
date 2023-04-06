@@ -22,10 +22,11 @@ export default function Register({loading, setLoading}:{setLoading:any, loading:
             email: email,
             password: password,
             redirect: false,
-            callbackUrl: `${window.location.origin}`
+            callbackUrl: `https://beastsuccess.vercel.app/payment`
         }) 
       if (res) {
         setLoading(false)
+        window.location.href = "https://beastsuccess.vercel.app/payment"
       }
     }
 
